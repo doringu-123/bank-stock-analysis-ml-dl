@@ -1,3 +1,5 @@
+## Project Type
+University Project (Data Analytics / Financial Time-Series)
 # Bank Stock Forecasting Project
 
 This project explores how different modeling approaches perform in forecasting stock prices of major U.S. banks.  
@@ -6,11 +8,8 @@ The goal is to compare traditional econometric models, machine learning algorith
 The project was developed as part of a Business Data Analytics course.
 
 ---
-
 ## Dataset
-
 The analysis focuses on three large U.S. banks:
-
 - JPMorgan Chase (JPM)
 - Bank of America (BAC)
 - Wells Fargo (WFC)
@@ -29,12 +28,9 @@ Macroeconomic indicators
 - S&P 500 index  
 - Federal Funds Rate  
 
-Financial sentiment  
-- sentiment scores derived from financial news  
+Financial sentiment: sentiment scores derived from financial news. These different signals were used together to study how external market conditions affect stock price movements.
 
-These different signals were used together to study how external market conditions affect stock price movements.
 
----
 
 ## Data Processing
 
@@ -49,7 +45,6 @@ Before training the models, several preprocessing steps were applied:
 
 Different preprocessing pipelines were used depending on the type of model.
 
----
 
 ## Models Implemented
 
@@ -65,7 +60,6 @@ These models are commonly used in financial econometrics and provide interpretab
 
 They are mainly used to model price dynamics and volatility behavior.
 
----
 
 ### Machine Learning Models
 
@@ -77,7 +71,6 @@ Classical ML algorithms were applied for classification and volatility predictio
 
 These models help capture nonlinear relationships between features.
 
----
 
 ### Deep Learning Models
 
@@ -89,7 +82,7 @@ Recurrent neural networks were used for sequential prediction tasks.
 
 These models are designed to learn temporal dependencies in financial time-series data.
 
----
+
 
 ## Evaluation Metrics
 
@@ -108,7 +101,6 @@ Classification models were evaluated using:
 
 Time-series aware train/test splits were used to avoid data leakage.
 
----
 
 ## Key Observations
 
@@ -121,9 +113,40 @@ Some general observations from the experiments:
 
 The impact of sentiment data was mixed and strongly depended on data quality and alignment.
 
----
-
 
 ## Installation
 
-Clone the repository:
+Clone the repository: https://github.com/vu-leonguyen/bank-stock-analysis-ml-dl.git
+
+Install dependencies: pip install -r requirements.txt
+
+## Technologies Used
+
+Python libraries used in this project include:
+
+- NumPy  
+- Pandas  
+- scikit-learn  
+- statsmodels  
+- LightGBM  
+- TensorFlow / Keras  
+- SHAP  
+- Matplotlib  
+- Seaborn  
+- yfinance  
+
+---
+
+## Author
+Information Systems – University of Information Technology (UIT)
+- Nguyễn Trường Vũ  
+- Phạm Hùng Quốc Việt  
+- Đặng Hữu Thọ  
+- Phạm Minh Ngân  
+
+Information Systems student interested in:
+
+- Data analytics  
+- financial data analysis  
+- machine learning  
+- big data systems
