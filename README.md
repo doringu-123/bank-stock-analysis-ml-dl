@@ -1,152 +1,194 @@
-## Project Type
-University Project (Data Analytics / Financial Time-Series)
 # Bank Stock Forecasting Project
 
-This project explores how different modeling approaches perform in forecasting stock prices of major U.S. banks.  
-The goal is to compare traditional econometric models, machine learning algorithms, and deep learning models when applied to financial time-series data.
+## Overview
 
-The project was developed as part of a Business Data Analytics course.
+This project explores how different modeling approaches perform in forecasting stock prices of major U.S. banks.
+
+We compare:
+
+* Econometric models
+* Machine learning algorithms
+* Deep learning models
+
+on financial time-series data enriched with macroeconomic indicators and sentiment signals.
 
 ---
+
+## Key Highlights
+
+* Multi-model comparison: ARIMAX, GARCH, LightGBM, LSTM
+* Multi-source data: stock prices + macro + sentiment
+* Time-series feature engineering (lag, volatility, returns)
+* Real-world financial forecasting use case
+
+---
+
 ## Dataset
-The analysis focuses on three large U.S. banks:
-- JPMorgan Chase (JPM)
-- Bank of America (BAC)
-- Wells Fargo (WFC)
 
-The dataset spans roughly **2018–2025** and combines multiple sources of information:
+The analysis focuses on:
 
-Stock market data  
-- Open  
-- High  
-- Low  
-- Close  
-- Volume  
+* JPMorgan Chase (JPM)
+* Bank of America (BAC)
+* Wells Fargo (WFC)
 
-Macroeconomic indicators  
-- VIX (volatility index)  
-- S&P 500 index  
-- Federal Funds Rate  
+📅 Time range: **2018 – 2025**
 
-Financial sentiment: sentiment scores derived from financial news. These different signals were used together to study how external market conditions affect stock price movements.
+### Features
 
+**Market Data**
 
+* Open, High, Low, Close, Volume
+
+**Macroeconomic Indicators**
+
+* VIX
+* S&P 500
+* Federal Funds Rate
+
+**Sentiment Data**
+
+* News-based sentiment scores
+
+---
 
 ## Data Processing
 
-Before training the models, several preprocessing steps were applied:
-
-- calculation of daily log returns  
-- rolling volatility estimation  
-- creation of lagged features  
-- alignment of macroeconomic indicators with stock prices  
-- handling of missing values  
-- feature scaling when required  
-
-Different preprocessing pipelines were used depending on the type of model.
-
-
-## Models Implemented
-
-The project compares three groups of models.
-
-### Econometric Models
-
-These models are commonly used in financial econometrics and provide interpretable structures.
-
-- ARIMAX  
-- SARIMAX  
-- GARCH(1,1)  
-
-They are mainly used to model price dynamics and volatility behavior.
-
-
-### Machine Learning Models
-
-Classical ML algorithms were applied for classification and volatility prediction tasks.
-
-- Logistic Regression  
-- Support Vector Machine (SVM)  
-- Gradient Boosting Tree (LightGBM)  
-
-These models help capture nonlinear relationships between features.
-
-
-### Deep Learning Models
-
-Recurrent neural networks were used for sequential prediction tasks.
-
-- GRU  
-- LSTM  
-- LSTM with sentiment input  
-
-These models are designed to learn temporal dependencies in financial time-series data.
-
-
-
-## Evaluation Metrics
-
-Regression models were evaluated using:
-
-- RMSE  
-- MAE  
-- MAPE  
-
-Classification models were evaluated using:
-
-- Accuracy  
-- Precision  
-- Recall  
-- F1-score  
-
-Time-series aware train/test splits were used to avoid data leakage.
-
-
-## Key Observations
-
-Some general observations from the experiments:
-
-- No single model consistently performs best across all tasks.
-- Econometric models remain useful for capturing macroeconomic effects.
-- Machine learning models sometimes improve performance when nonlinear patterns exist.
-- Deep learning models can perform well for short-term forecasting when enough temporal structure is present.
-
-The impact of sentiment data was mixed and strongly depended on data quality and alignment.
-
-
-## Installation
-
-Clone the repository: https://github.com/vu-leonguyen/bank-stock-analysis-ml-dl.git
-
-Install dependencies: pip install -r requirements.txt
-
-## Technologies Used
-
-Python libraries used in this project include:
-
-- NumPy  
-- Pandas  
-- scikit-learn  
-- statsmodels  
-- LightGBM  
-- TensorFlow / Keras  
-- SHAP  
-- Matplotlib  
-- Seaborn  
-- yfinance  
+* Log returns calculation
+* Rolling volatility estimation
+* Lag feature creation
+* Data alignment (macro + stock)
+* Missing value handling
+* Feature scaling
 
 ---
 
-## Author
+## Models Implemented
+
+### Econometric Models
+
+* ARIMAX
+* SARIMAX
+* GARCH(1,1)
+
+### Machine Learning
+
+* Logistic Regression
+* SVM
+* LightGBM
+
+### Deep Learning
+
+* GRU
+* LSTM
+* LSTM + Sentiment
+
+---
+
+## Evaluation Metrics
+
+**Regression**
+
+* RMSE
+* MAE
+* MAPE
+
+**Classification**
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+
+---
+
+## Results & Visualization
+### Example: Stock Price Prediction
+
+![Stock Prediction](images/stock_prediction.png)
+
+### Example: Model Comparison
+
+![Model Comparison](images/model_comparison.png)
+
+### Example: Feature Importance (SHAP)
+
+![SHAP](images/shap_summary.png)
+
+---
+
+## Key Insights
+
+* No single model dominates across all tasks
+* Econometric models capture macro trends well
+* ML models handle nonlinear relationships
+* Deep learning models perform well for short-term prediction
+* Sentiment impact depends heavily on data quality
+
+---
+
+## 🗂️ Project Structure
+
+```
+project/
+│── data/
+│── notebooks/
+│── src/
+│── models/
+│── images/
+│── README.md
+```
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/vu-leonguyen/bank-stock-analysis-ml-dl.git
+cd bank-stock-analysis-ml-dl
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+```bash
+python train.py
+```
+
+or open notebooks:
+
+```bash
+jupyter notebook
+```
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas, NumPy
+* scikit-learn
+* statsmodels
+* LightGBM
+* TensorFlow / Keras
+* SHAP
+* Matplotlib, Seaborn
+
+---
+
+## 👨‍💻 Author
+
 Information Systems – University of Information Technology (UIT)
-- Nguyễn Trường Vũ  
-- Phạm Hùng Quốc Việt  
-- Đặng Hữu Thọ  
-- Phạm Minh Ngân  
 
-Information Systems student interested in:
+* Nguyễn Trường Vũ
+* Phạm Hùng Quốc Việt
+* Đặng Hữu Thọ
+* Phạm Minh Ngân
 
-- Data analytics  
-- financial data analysis  
-- machine learning  
-- big data systems
+Interests:
+
+* Data Analytics
+* Financial Data
+* Machine Learning
+* Big Data Systems
